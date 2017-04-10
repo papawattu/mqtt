@@ -7,7 +7,9 @@
     "start": "node index.js",
     "test": "npm run test-unit",
     "test-unit": "./node_modules/.bin/cross-env NODE_ENV=test mocha --compilers js:babel-core/register --recursive ./src",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "build-lib": "babel src -d lib",
+    "postinstall": "postinstall-build lib \"npm run build-lib\""
   },
   "author": "Jamie Nuttall",
   "license": "ISC",
@@ -19,6 +21,8 @@
     "mocha": "^3.2.0"
   },
   "dependencies": {
-    "mqtt": "^2.6.2"
+    "mqtt": "^2.6.2",
+    "postinstall-build": "^2.0.0"
+
   }
 }
